@@ -808,6 +808,7 @@ featurePlot(x = PimaIndiansDiabetes[, 1:8], y = PimaIndiansDiabetes[, 9],
 # use renv::restore() to re-install the same package version in their local
 # machine during their initialization step.
 renv::snapshot()
+#testing thur 21
 
 # References ----
 ## Bevans, R. (2023a). ANOVA in R | A Complete Step-by-Step Guide with Examples. Scribbr. Retrieved August 24, 2023, from https://www.scribbr.com/statistics/anova-in-r/ # nolint ----
