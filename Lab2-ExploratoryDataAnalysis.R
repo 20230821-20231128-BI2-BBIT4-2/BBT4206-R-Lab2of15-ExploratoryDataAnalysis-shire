@@ -858,7 +858,7 @@ renv::snapshot()
 # dataset). Exploratory Data Analysis that presents ALL the possible statistics
 # re-creates the problem of information overload.
 
-## Part D ----
+## Part D ----#
 # Render the .Rmd (R markdown) file into its .md (markdown) version by using
 # knitR in RStudio.
 # Documentation of knitR: https://www.rdocumentation.org/packages/knitr/
