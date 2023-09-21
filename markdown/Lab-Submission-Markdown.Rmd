@@ -1,7 +1,7 @@
 ---
 title: "Business Intelligence Lab Submission Markdown"
-author: "<Specify your group name here>"
-date: "<Specify the date when you submitted the lab>"
+author: "<Shire>"
+date: "<9/21/2023>"
 output:
   github_document: 
     toc: yes
@@ -16,19 +16,19 @@ editor_options:
 # Student Details
 
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Student ID Numbers and Names of Group Members** | *\<list one student name, class group (just the letter; A, B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be between 2 and 5 members per group\>* |
+| **Student ID Numbers and Names of Group Members** | *\<136657 - C - Shirleen Murugi\>* |
 |                                                   |                                                                                                                                                                          |
-|                                                   | 1.  ID - Class Group - Name                                                                                                                                              |
-|                                                   |                                                                                                                                                                          |
-|                                                   | 2.  ID - Class Group - Name                                                                                                                                              |
-|                                                   |                                                                                                                                                                          |
+|                                                   | 1.  ID - Class Group - Name                                                                                                                                              |Shirleen
+|  Murugi                                                 | 136657 - C -                                                                                                                                                                         |
+|                                                   | 2.  ID - Class Group - Name                                                                                                                                              |Rehema
+|  jemutai                                                   |   135791 - C -                                                                                                                                                                        |
 |                                                   | 3.  ID - Class Group - Name                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
 |                                                   | 4.  ID - Class Group - Name                                                                                                                                              |
 |                                                   |                                                                                                                                                                          |
 |                                                   | 5.  ID - Class Group - Name                                                                                                                                              |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **GitHub Classroom Group Name**                   | *\<specify the name of the team you created on GitHub classroom\>*                                                                                                       |
+| **GitHub Classroom Group Name**                   | *\<Shire\>*                                                                                                       |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Course Code**                                   | BBT4206                                                                                                                                                                  |
 +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -98,9 +98,10 @@ knitr::opts_chunk$set(
 The 20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset is then loaded. The dataset and its metadata are available here: <https://drive.google.com/drive/folders/1-BGEhfOwquXF6KKXwcvrx7WuZXuqmW9q?usp=sharing>
 
 ```{r Load Dataset}
+library(readr)
 student_performance_dataset <-
   readr::read_csv(
-                  "../data/20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset.CSV", # nolint
+                  "/data/20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset.CSV", # nolint
                   col_types =
                   readr::cols(
                               class_group =
@@ -253,19 +254,116 @@ summary(student_performance_dataset)
 Describe the code chunk here:
 
 ```{r Your Sixth Code Chunk}
-# Fill this with R related code that will be executed when the R markdown file
+sapply(student_performance_dataset, class)
 ```
+
 
 ## \<You Can Have a Sub-Title Here if you wish\>
 
 ```{r Your Seventh Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
+student_performance_dataset_freq <- student_performance_dataset$GRADE 
+  cbind(frequency = table(student_performance_dataset_freq),
+        percentage = prop.table(table(student_performance_dataset_freq)) * 100)
 ```
 
 ## \<You Can Have Another Sub-Title Here if you wish\>
 
 ```{r Your Eighth Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
+student_performance_dataset_GRADE_mode <- names(table(student_performance_dataset$GRADE))[
+    which(table(student_performance_dataset$GRADE) == max(table(student_performance_dataset$GRADE)))
+  ]
+  print(student_performance_dataset_GRADE_mode)
 ```
 
+```{r Your nineth Code Chunk}
+summary(student_performance_dataset)
+```
+
+```{r Your tenth Code Chunk}
+sapply(student_performance_dataset[, 1], sd)
+sapply(student_performance_dataset[, c(97, 96, 99)], sd)
+```
+
+```{r Your 11th Code Chunk}
+sapply(student_performance_dataset[, 96:99], var)
+```
+```
+```{r Your 12th Code Chunk}
+if (!is.element("e1071", installed.packages()[, 1])) {
+    install.packages("e1071", dependencies = TRUE)
+  }
+  require("e1071")
+  sapply(student_performance_dataset[, 96:99],  kurtosis, type = 2)
+```
+```
+```{r Your 13th Code Chunk}
+sapply(student_performance_dataset[, 96:99],  skewness, type = 2)
+```
+```
+```{r Your 14th Code Chunk}
+student_performance_dataset_cov <- cov(student_performance_dataset[, 96:99])
+  View(student_performance_dataset_cov)
+```
+
+```{r Your 15th Code Chunk}
+student_performance_dataset_cor <- cor(student_performance_dataset[, 96:99])
+  View(student_performance_dataset_cor)
+```
+```
+```{r Your 16th Code Chunk}
+student_performance_dataset_one_way_anova <- aov(TOTAL ~ Coursework , EXAM = student_performance_dataset)
+  summary(student_performance_dataset_one_way_anova)
+```
+
+```{r Your 17th Code Chunk}
+student_performance_dataset_yield <- as.numeric(unlist(student_performance_dataset[, 4]))
+  hist(student_performance_dataset_yield, main = names(student_performance_dataset)[4])
+```
+
+```{r Your 18th Code Chunk}
+par(mfrow = c(1, 3))
+  for (i in 1:3) {
+    boxplot(student_performance_dataset[, i], main = names(student_performance_dataset)[i])
+  }
+  boxplot(student_performance_dataset[, 96], main = names(student_performance_dataset)[96])
+  boxplot(student_performance_dataset[, 97], main = names(student_performance_dataset)[97])
+  boxplot(student_performance_dataset[, 98], main = names(student_performance_dataset)[98])
+```
+
+```{r Your 19th Code Chunk}
+ barplot(table(student_performance_dataset[, 96]), main = names(student_performance_dataset)[96])
+```
+
+```{r Your 20th Code Chunk}
+if (!is.element("Amelia", installed.packages()[, 1])) {
+    install.packages("Amelia", dependencies = TRUE)
+  }
+  require("Amelia")
+  
+  missmap(student_performance_dataset, col = c("red", "grey"), legend = TRUE)
+```
+
+```{r Your 21st Code Chunk}
+if (!is.element("corrplot", installed.packages()[, 1])) {
+    install.packages("corrplot", dependencies = TRUE)
+  }
+  require("corrplot")
+  corrplot(cor(student_performance_dataset[, 96]), method = "circle")
+```
+
+```{r Your 22nd Code Chunk}
+ggplot(student_performance_dataset,
+         aes(x = health, y = mentor,color = mentor_meetings)) +
+    geom_point() +
+    geom_smooth(method = lm)
+```
+
+```{r Your 23rd Code Chunk}
+if (!is.element("caret", installed.packages()[, 3])) {
+    install.packages("caret", dependencies = TRUE)
+  }
+  require("caret")
+  featurePlot(x = student_performance_dataset[, 43:47], y = student_performance_dataset[, 5], plot = "box")
+  
+```
 **etc.** as per the lab submission requirements. Be neat and communicate in a clear and logical manner.

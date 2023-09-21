@@ -1,7 +1,7 @@
 Business Intelligence Lab Submission Markdown
 ================
-<Specify your group name here>
-<Specify the date when you submitted the lab>
+<Shire>
+\<9/21/2023\>
 
 - [Student Details](#student-details)
 - [Setup Chunk](#setup-chunk)
@@ -17,48 +17,14 @@ Business Intelligence Lab Submission Markdown
 
 # Student Details
 
-<table>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 76%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Student ID Numbers and Names of Group Members</strong></td>
-<td><p><em>&lt;list one student name, class group (just the letter; A,
-B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be
-between 2 and 5 members per group&gt;</em></p>
-<ol type="1">
-<li><p>ID - Class Group - Name</p></li>
-<li><p>ID - Class Group - Name</p></li>
-<li><p>ID - Class Group - Name</p></li>
-<li><p>ID - Class Group - Name</p></li>
-<li><p>ID - Class Group - Name</p></li>
-</ol></td>
-</tr>
-<tr class="even">
-<td><strong>GitHub Classroom Group Name</strong></td>
-<td><em>&lt;specify the name of the team you created on GitHub
-classroom&gt;</em></td>
-</tr>
-<tr class="odd">
-<td><strong>Course Code</strong></td>
-<td>BBT4206</td>
-</tr>
-<tr class="even">
-<td><strong>Course Name</strong></td>
-<td>Business Intelligence II</td>
-</tr>
-<tr class="odd">
-<td><strong>Program</strong></td>
-<td>Bachelor of Business Information Technology</td>
-</tr>
-<tr class="even">
-<td><strong>Semester Duration</strong></td>
-<td>21<sup>st</sup> August 2023 to 28<sup>th</sup> November 2023</td>
-</tr>
-</tbody>
-</table>
+|                                                                                                                                                                                                                                                                                                                                                   |                                                              |     |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|-----|
+| **Student ID Numbers and Names of Group Members** \| *\<136657 - C - Shirleen Murugi\>* \| \| \| \| 1. ID - Class Group - Name \|Shirleen Murugi \| 136657 - C - \| \| 2. ID - Class Group - Name \|Rehema jemutai \| 135791 - C - \| 3. ID - Class Group - Name \| \| \| \| 4. ID - Class Group - Name \| \| \| \| 5. ID - Class Group - Name \| |                                                              |     |
+| **GitHub Classroom Group Name**                                                                                                                                                                                                                                                                                                                   | *\<Shire\>* \|                                               |     |
+| **Course Code**                                                                                                                                                                                                                                                                                                                                   | BBT4206                                                      |     |
+| **Course Name**                                                                                                                                                                                                                                                                                                                                   | Business Intelligence II                                     |     |
+| **Program**                                                                                                                                                                                                                                                                                                                                       | Bachelor of Business Information Technology                  |     |
+| **Semester Duration**                                                                                                                                                                                                                                                                                                                             | 21<sup>st</sup> August 2023 to 28<sup>th</sup> November 2023 |     |
 
 # Setup Chunk
 
