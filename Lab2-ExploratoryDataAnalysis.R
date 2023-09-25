@@ -1,6 +1,6 @@
 # *****************************************************************************
 # Lab 2: Exploratory Data Analysis ----
-#
+# the lab
 # Course Code: BBT4206
 # Course Name: Business Intelligence II
 # Semester Duration: 21st August 2023 to 28th November 2023
@@ -271,6 +271,26 @@ summary(PimaIndiansDiabetes)
 # calculate the standard deviation of only columns that are numeric, thus
 # leaving out the columns termed as “factors” (categorical) or those that have
 # a string data type.
+grade
+attendance waiver
+mentor meetings
+mentor
+alcohol
+nightout
+dayout
+health
+financialwellness
+spiritual\
+romantic
+friendship
+family ra
+laptop
+internet
+pray
+meditate
+exercise
+sports
+extracuriculat, function)
 
 sapply(BostonHousing[, -4], sd)
 sapply(BostonHousing[, c(1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)], sd)
@@ -794,6 +814,7 @@ ggplot(PimaIndiansDiabetes,
 ### STEP 23. Create Multivariate Box and Whisker Plots by Class ----
 # This applies to datasets where the target (dependent) variable is categorical.
 # Execute the following code:
+
 if (!is.element("caret", installed.packages()[, 1])) {
   install.packages("caret", dependencies = TRUE)
 }
