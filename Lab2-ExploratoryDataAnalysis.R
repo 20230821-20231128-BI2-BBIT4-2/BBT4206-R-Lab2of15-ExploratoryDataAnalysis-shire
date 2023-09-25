@@ -77,10 +77,7 @@ renv::restore()
 # One of the packages required to use R in VS Code is the "languageserver"
 # package. It can be installed manually as follows if you are not using the
 # renv::restore() command.
-if (!is.element("languageserver", installed.packages()[, 1])) {
-  install.packages("languageserver", dependencies = TRUE)
-}
-require("languageserver")
+
 
 # Loading Datasets ----
 ## STEP 2: Download sample datasets ----
